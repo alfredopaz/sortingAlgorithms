@@ -4,7 +4,10 @@
 #include <assert.h>
 #include "sorting.h"
 
-double gettingSortingTime(int arraySize, int a[], void (*sort)(int, int[])){
+double gettingSortingTime(int arraySize, int o[], void (*sort)(int, int[])){
+  int *a = malloc(sizeof(int) * arraySize);
+  memcpy(a, o, sizeof(int) * arraySize);
+
   struct timespec start, end;
 
   clock_gettime(CLOCK_MONOTONIC_RAW, &start);
@@ -14,6 +17,7 @@ double gettingSortingTime(int arraySize, int a[], void (*sort)(int, int[])){
 
   double deltaTime = (end.tv_sec - start.tv_sec) + 
     (double) (end.tv_nsec - start.tv_nsec) / 1e9;
+  free(a);
   return deltaTime;
 }
 

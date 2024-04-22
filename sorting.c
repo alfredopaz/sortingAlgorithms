@@ -21,16 +21,16 @@ void fillArray(int n, int* a){
 
 void merge(int a[], int p, int q, int r) {
   int i, j, k;
-  int nl = q - p + 1;
-  int nr = r - q;
+  int nl = q - p;
+  int nr = r - q + 1;
 
-  int la[nl + 1], ra[nr + 1];
+  int la[nl], ra[nr];
 
-  for(i = 0; i < nl - 1; i++)
+  for(i = 0; i < nl; i++)
     la[i] = a[p + i];
 
-  for(j = 0; j < nr - 1; j++)
-    ra[j] = a[q + j + 1];
+  for(j = 0; j < nr; j++)
+    ra[j] = a[q + j];
 
   i = 0;
   j = 0;

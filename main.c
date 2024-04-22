@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <assert.h>
+#include <string.h>
 #include "sorting.h"
 
 double gettingSortingTime(int arraySize, int o[], void (*sort)(int, int[])){

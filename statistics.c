@@ -1,3 +1,4 @@
+#include <math.h>
 #include "statistics.h"
 
 double average(int arraySize, double *data){
@@ -11,7 +12,7 @@ double standardDeviation(int arraySize, double *a){
   double sum = 0;
   
   for(int i = 0; i < arraySize; i++)
-    sum += pow(data[i]);
+    sum += pow(a[i], 2);
 
   return sqrt(sum / arraySize);
 }
